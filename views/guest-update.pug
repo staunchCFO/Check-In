@@ -1,8 +1,10 @@
 include includes/header.pug 
 block content 
     link(rel="stylesheet", href="/stylesheets/dashboard.css")
+    link(rel="stylesheet", href="/stylesheets/mainHome.css")
     body
-        div(class="container pt-3")
+        include includes/navbar.pug
+        div(class="container guest_container")
             div(class="d-flex justify-content-between")
                 h5.font-bold Update your Guest
                 
@@ -11,21 +13,21 @@ block content
                     .form-field
                         form(method="POST")
                             div.row 
-                                div(class="col-md-6")
+                                div(class="col-md-6 mr-2")
                                     label(class="label") First Name :
-                                    input(type="text" class="form-control mb-3" name="firstName" value= guestDB.firstName)
-                                div(class="col-md-6")
+                                    input(type="text" class="login_form input-control input_text mb-3 mr-5" name="firstName" value= guestDB.firstName)
+                                div(class="col-md-6 mr-2")
                                     label(class="label") Last Name :
-                                    input(type="text" class="form-control mb-3" name="lastName" value= guestDB.lastName)
-                                div(class="col-md-4")
+                                    input(type="text" class="login_form input-control input_text mb-3" name="lastName" value= guestDB.lastName)
+                                div(class="col-md-6 mr-5")
                                     label(class="label") Table Number :
-                                    input(class="form-control mb-3 custom-select" name="tableNumber" value= guestDB.tableNumber)
-                                div(class="col-md-4")
+                                    input(class="login_form input-control input_text mb-3 custom-select" name="tableNumber" value= guestDB.tableNumber)
+                                div(class="col-md-6 mr-2")
                                     label(class="label") Partner :
-                                    input(class="form-control mb-3 custom-select" name="extraGuest" value= guestDB.extraGuest)
+                                    input(class="login_form input-control input_text mb-3 custom-select" name="extraGuest" value= guestDB.extraGuest)
 
-                            div(class="text-center")
-                                button(type="submit" class="btn main-btn") Continue
+                            div(class="text-cen")
+                                button(type="submit" class="form_button mb-5") Continue
     
 
 

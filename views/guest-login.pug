@@ -2,26 +2,22 @@ include includes/header.pug
 block content 
     link(rel="stylesheet", href="/stylesheets/dashboard.css")
     body
-        div(class="container pt-3")
+        div(class="container mt-5")
             div(class="d-flex justify-content-between")
-                h5.font-bold Enter Your Details
-                
-
+        
             .row.justify-content-center
                 .col-md-6
+                    .text-center
+                        p.form-alertError.formAlert #{noEntry}
                     .form-field
-                        form(method="POST")
-                            p #{noEntry}
-                            div.row 
-                                div(class="col-md-6")
-                                    label(class="label") First Name :
-                                    input(type="text" class="form-control mb-3" name="firstName" required)
-                                div(class="col-md-6")
-                                    label(class="label") Last Name :
-                                    input(type="text" class="form-control mb-3" name="lastName" required)
-
-                            div(class="text-center")
-                                button(type="submit" class="btn main-btn") Enter The Hall
+                        h5.form_text Enter Your Details
+                        form(method="POST" class="mt-4 text-center")
+                          input(type="text" name="firstName" placeholder="First Name" class="login_form input-control input_text" id="firstname") 
+                          input(type="text" name="lastName" placeholder="Last Name" class="login_form input-control mt-3 input_text" id="lastname")
+                           
+                          p(class='formAlert form-alertError' id='response-register') #{error}
+                          div(class=" mb-5")
+                            button(type="submit" class="form_button mt-4 validate") Enter Hall
     
 
 

@@ -6,19 +6,15 @@ block content
             h5.font-bold Welcome back to your login page, ADMIN!!!!!!
             p.font-italic #[strong Note :] Your email is your default password
             .row.justify-content-center
-                .col-md-10.card
                     .form-field
-                        form(method="POST")
-                            div.row 
-                                div(class="col-md-6")
-                                    label(class="label") Email :
-                                    input(type="text" class="form-control mb-3" name="email" required)
-                                div(class="col-md-6")
-                                    label(class="label") Password :
-                                    input(type="password" class="form-control mb-3" name="password" required)
-
-                            div(class="text-center")
-                                button(type="submit" class="btn main-btn") Continue
+                        h5.form_text Enter Your Details
+                        form(method="POST" class="mt-4 text-center")
+                          input(type="text" name="email" placeholder="Email" class="login_form input-control input_text" id="firstname") 
+                          input(type="password" name="password" placeholder="Password" class="login_form input-control mt-3 input_text" id="lastname")
+                           
+                          p(class='formAlert form-alertError' id='response-register') #{error}
+                          div(class=" mb-5")
+                            button(type="submit" class="form_button mt-4 validate") Login
 
 
 

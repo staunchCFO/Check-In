@@ -1,14 +1,26 @@
 include includes/header.pug 
 block content 
     link(rel="stylesheet", href="/stylesheets/dashboard.css")
+    link(rel="stylesheet" , href="/stylesheets/mainHome.css")
     body
         div(class="container pt-3")
-            p
-            br 
-            | Welcome to #ADEFISAYO, #{guest.firstName} #{guest.lastName}
-            br
-            | Your table number is table #{guest.tableNumber} 
-            br 
-            | Your invitation permits #{guest.extraGuest} person
-
+            .mt-5
+                a(href="/guest/login" class='btn intro-trans mt-2') Go Back
+            .row
+                .col-md-2
+                .col-md-8
+                    .card.mt-5
+                        .card-body
+                            p.congrats Dear #{guest.firstName} #{guest.lastName}, 
+                                br 
+                                | Welcome to 
+                                span.guest #ADEFISAYO2020, 
+                                | Your table reservation number is table #{guest.tableNumber}.
+                                if guest.extraGuest
+                                    br
+                                    | Your invitation permits #{guest.extraGuest} person, thank you for making out time to be here!
+                                else
+                                    br
+                                    | Thank you for making out time to be here!
+                .col-md-2
     include includes/footer.pug 

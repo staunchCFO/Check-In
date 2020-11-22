@@ -1,14 +1,37 @@
 include includes/header.pug 
 block content
-  link(rel="stylesheet", href="")
+  link(rel="stylesheet", href="/stylesheets/mainHome.css")
   body
-    div.container.pt-5 
-      p #{title}
+    #intro
+      include includes/navbar.pug
+        section#main.main
+              section
+                  .container-fluid.cont
+                      .row
+                          .col-lg-7.wow.slideInLeft
+                              div.intro-container.text-white.mt-5
+                                  h1.head_note Welcome to 
+                                    span.guest #ADEFISAYO2020, 
+                                    | Kindly login as Guest to confirm your reservation.
+                                    
+                                  p.head_p 
+                                  .row
+                                      .col-sm-4.col-lg-4.col-md-4.col-6.buy-c
+                                          a(href="/guest" class="btn intro-trans mb-4") Guest Login
+                              //-div.intro-text
+                                  p.text-white JOIN OUR COMMUNITY
+                                  div
+                                      a(href="https://www.facebook.com/drewallet-117820563386824/?ref=settings&fb_dtsg_ag=AQyNKTZUXsOrXLFh2_s3jyefqTVz-rjraj4m5E3ZJmbL_w%3AAQyEhlXeLnN_TURf5tl_0sIttgAA5m-Q74GJTrcnvwWq-g&jazoest=28248" target='_blank')
+                                          i(class="fab fa-facebook-f mr-2") 
+                                      a(href="https://www.twitter.com/Drewallet" target='_blank')
+                                          i(class="fab fa-twitter mr-2")
+                                      a(href="https://www.instagram.com/drewallet" target='_blank')
+                                          i(class="fab fa-instagram")
+                          //-.col-lg-5.wow.slideInUp
+                              div.intro-img-box.pt-5
+                                  img(src="/images/guest.svg" class="img-fluid hero-img" alt="Trade with us") 
+        
 
-      p
-        a(href="/admin") Admin
-      p 
-        a(href="/guest/login") Guest
 
 
 
@@ -16,6 +39,8 @@ block content
 
 
 
-
-
-  include includes/footer.pug
+    script(src="/javascripts/jquery.min.js")
+    script(src="/plugins/bootstrap/js/bootstrap.min.js")
+    script(src="/plugins/easing/easing.min.js")
+    script(src="/javascripts/index.js")
+    include includes/footer.pug

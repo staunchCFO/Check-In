@@ -1,0 +1,33 @@
+block content
+    .container
+        div(id="side-menu" class="side-nav")
+            .side-side
+                .row.mt-4.d-block
+                    .col-6
+                        a(class="nav-link js-scroll nav-blue text-white btn side" href="/admin") ADMIN
+                    .col-6.mt-3
+                        a(class="nav-link js-scroll gg btn nav-trans text-white side" href="/guest/login") GUEST
+
+        nav(class="navbar navbar-expand-lg fixed-top def-navbar navbar-trans" id="mainNav")
+            div(class="container-fluid cont")
+                a(class="navbar-brand navbar-header def-header" href="/") 
+                    //-img(src="/images/dre.png", alt="logo"  class="nav-logo")
+                button(class="navbar-toggler clicked" type="button"
+                    aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation")
+                    span
+                    span
+                    span
+                if admin
+                    div(class="navbar-collapse collapse ")
+                        ul(class="navbar-nav ml-auto")
+                            li(class="nav-item")
+                                a(class="nav-link js-scroll nav-blue text-white btn side" href="/logout") Logout
+                else
+                    div(class="navbar-collapse collapse ")
+                        ul(class="navbar-nav ml-auto")
+                            li(class="nav-item")
+                                a(class="nav-link js-scroll nav-blue text-white btn side" href="/admin") ADMIN
+                            li(class="nav-item")
+                                a(class="nav-link js-scroll gg btn nav-trans text-white side" href="/guest/login") GUEST
+            
+
